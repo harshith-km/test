@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor Movements</title>
+    <style> 
+        #cursorPosition { 
+
+            background-color: rgba(0, 0, 0, 0.7); 
+            color: white; 
+            padding: 5px; 
+            border-radius: 5px; 
+        } 
+    </style>
+</head>
+<body>
+    <h1>Move your mouse around</h1>
+    <div id="cursorPosition">X: 0, Y: 0</div> <!-- Changed class to id -->
+    <script>
+        document.addEventListener('mousemove', (event) => {
+            const x = event.clientX;
+            const y = event.clientY;
+            let move = 0;
+
+            const cursorPosition = document.getElementById('cursorPosition');
+            cursorPosition.textContent = `X: ${x}, Y: ${y}`; // Corrected string interpolation
+
+            if (x > event.clientX && x< event.clientX){
+                move = move + 1;
+                console.log('cursor  moved'+ move)
+            }
+            else{
+                move = move + 1;
+                console.log('cursor  moved'+ move)
+            }
+        });
+    </script>
+</body>
+</html>

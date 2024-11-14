@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .vr{
+            height: 500px;
+            width: 1px;
+            border: 1px solid black;
+            background-color: black;
+        }
+        .main_div{
+            display: flex;
+            column-gap: 20px;
+            align-items: end;
+        }
+    </style>
+</head>
+<body>
+    <h1>Harsha</h1>
+    <hr>
+    
+    <div class="main_div">
+
+        <div class="vr"></div>
+        <h1>Srinivas</h1>
+        <div class="vr"></div>
+        <h1 id="spl">Nandish</h1>
+
+        <button type="button" id="eventLis">click me </button>
+    </div>
+
+    <script>
+        document.addEventListener('mousemove', function(event){
+            console.log(event.clientX)
+        } )
+    </script>
+</body>
+</html>

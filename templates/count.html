@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            column-gap: 25px;
+        }
+        button{
+            padding: 10px;
+            font-size: xx-large;
+        }
+        .test_div{
+            padding: 20px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    
+    <button type="button" id="btn">Count 0</button>
+
+    <div class="test_div" id="test_div">
+        my name is 
+    </div>
+
+    <script>
+
+        let count = 0;
+        const  btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function(){
+            count = count + 1;
+
+            btn.textContent = 'Count '+count;
+        })
+
+        const test_div = document.getElementById('test_div');
+
+        test_div.addEventListener('click', function(){
+            test_div.textContent = 'My name is srinivas'
+        })
+
+
+    </script>
+</body>
+</html>
+
+

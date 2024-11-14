@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <div id="main_div">
+        <h1>Harshith</h1>
+    </div>
+    <script> 
+        let startTime; window.onload = () => { 
+            startTime = new Date().getTime(); 
+            console.log('Page loaded at:', startTime); 
+        }; 
+        const handleUnload = () => { 
+            const endTime = new Date().getTime(); 
+            let timeSpent = (endTime - startTime) / 1000; // Convert to seconds 
+            console.log('Page closed or navigated away. Time spent on page:', timeSpent, 'seconds'); 
+            
+            if (timeSpent>1800) {
+                timeSpent = 1800
+            }
+
+            fetch('/track_time', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ time_spent: timeSpent})
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Sucess:', data)
+                console.log('Send s')
+            })
+            .catch((errors) =>{
+                console.error('Error:' ,  error);
+            })
+        
+        }; 
+
+        
+        
+        window.addEventListener('beforeunload', handleUnload); 
+    
+    </script>
+
+</body>
+</html>
